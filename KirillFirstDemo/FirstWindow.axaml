@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" MaxWidth="500" MaxHeight="450" MinWidth="500" MinHeight="450"
+        x:Class="KirillFirstDemo.FirstWindow"
+		x:CompileBindings="False"
+        Title="FirstWindow">
+	<StackPanel>
+		<Grid RowDefinitions="10, 25, 10, 38, 300, 35">
+		<Border Margin="3, 0, 3, 0" BorderBrush="Black" Grid.Row="1" BorderThickness="1">
+			<TextBox Watermark="Поиск" BorderBrush="White"/>
+			</Border>
+			<DockPanel Margin="3, 0, 0, 0" Grid.Row="3" VerticalAlignment="Top">
+				<ComboBox SelectedIndex="0" MaxDropDownHeight="100">
+					<ComboBoxItem>Text Item 1</ComboBoxItem>
+				</ComboBox>
+				<ComboBox Margin="3, 0, 0, 0" SelectedIndex="0" MaxDropDownHeight="100">
+					<ComboBoxItem>Text Item 1</ComboBoxItem>
+				</ComboBox>
+				</DockPanel>
+		<ListBox Grid.Row="4" Margin="3, 0, 3, 0" x:Name="DataPerson" SelectionMode="Multiple, Toggle" Background="Aqua">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border BorderBrush="Black" BorderThickness="2">
+						<Grid Margin="4" RowDefinitions="105" ColumnDefinitions="120, 10, 300">
+							<Border BorderBrush="Black" BorderThickness="1">
+							</Border>
+							<Grid Grid.Column="2" RowDefinitions="25, 25, 25, 30, 25">
+								<TextBlock Text="Наименование услуги"/>
+								<TextBlock Text="800 рулей за 30 минут" Grid.Row="1"/>
+								<TextBlock Text="800 рулей за 30 минут" Grid.Row="2"/>
+								<DockPanel Grid.Row="3">
+									<Button Content="редактировать"/>
+									<Button Content="удалить"/>
+								</DockPanel>
+							</Grid>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+			<Button Grid.Row="5" Content="Добавить товар"/>
+			</Grid>
+	</StackPanel>
+</Window>
